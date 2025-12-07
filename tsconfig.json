@@ -7,6 +7,7 @@
 		"module": "ESNext",
 		"outDir": "dist",
 		"sourceMap": true,
-		"newLine": "lf"
+		"newLine": "lf",
+		"skipLibCheck": true
 	}
 }

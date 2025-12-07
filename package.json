@@ -19,6 +19,7 @@
   "homepage": "https://github.com/GoogleChromeLabs/wasi-fs-access#readme",
   "description": "",
   "dependencies": {
+    "@mlc-ai/web-llm": "^0.2.80",
     "asyncify-wasm": "^1.1.1",
     "local-echo": "github:RReverser/local-echo",
     "xterm": "^4.9.0",
