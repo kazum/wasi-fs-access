@@ -1,19 +1,29 @@
 <!DOCTYPE html>
 <title>WebAssembly demo with File System Access</title>
-<meta name="description" content="A demo showing WebAssembly + WASI apps running on the Web with access to a real filesystem." />
+<meta name="description"
+  content="A demo showing WebAssembly + WASI apps running on the Web with access to a real filesystem." />
 <link rel="preload" href="coreutils.async.wasm" as="fetch" crossorigin />
 <link rel="icon" href="https://webassembly.org/favicon.ico" type="image/x-icon">
+<script src="coi-serviceworker.min.js"></script>
 <script type="importmap">
   {
     "imports": {
-      "@mlc-ai/web-llm": "https://esm.run/@mlc-ai/web-llm@0.2.80"
+      "@mlc-ai/web-llm": "https://esm.run/@mlc-ai/web-llm@0.2.80",
+      "asyncify-wasm": "https://unpkg.com/asyncify-wasm@1.1.1/dist/asyncify.mjs"
     }
   }
 </script>
-<style>html, body, .xterm { height: 100%; margin: 0 }</style>
-<link rel="stylesheet" href="node_modules/xterm/css/xterm.css" />
-<script src="node_modules/xterm/lib/xterm.js"></script>
-<script src="node_modules/local-echo/dist/local-echo.js"></script>
-<script src="node_modules/xterm-addon-fit/lib/xterm-addon-fit.js"></script>
-<script src="node_modules/xterm-addon-web-links/lib/xterm-addon-web-links.js"></script>
+<style>
+  html,
+  body,
+  .xterm {
+    height: 100%;
+    margin: 0
+  }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xterm@4.19.0/css/xterm.css" />
+<script src="https://cdn.jsdelivr.net/npm/xterm@4.19.0/lib/xterm.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/RReverser/local-echo@master/dist/local-echo.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/xterm-addon-fit@0.5.0/lib/xterm-addon-fit.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/xterm-addon-web-links@0.6.0/lib/xterm-addon-web-links.js"></script>
 <script type="module" src="dist/browser.js"></script>

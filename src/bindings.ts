@@ -14,7 +14,7 @@
 
 import { OpenFiles, FileOrDir, FIRST_PREOPEN_FD } from './fileSystem.js';
 // @ts-ignore
-import { instantiate } from '../node_modules/asyncify-wasm/dist/asyncify.mjs';
+import { instantiate } from 'asyncify-wasm';
 import {
   enumer,
   ptr,
@@ -47,7 +47,7 @@ export enum E {
 }
 
 export class ExitStatus {
-  constructor(public statusCode: number) {}
+  constructor(public statusCode: number) { }
 }
 
 const enum PreOpenType {
@@ -513,7 +513,7 @@ export default class Bindings {
             FileOrDir.Dir,
             OpenFlags.Create | OpenFlags.Directory | OpenFlags.Exclusive
           )
-          .then(() => {}),
+          .then(() => { }),
       path_rename: async (
         oldDirFd: fd_t,
         oldPathPtr: ptr<string>,
